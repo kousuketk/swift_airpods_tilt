@@ -15,6 +15,7 @@
 		FF92F7F525222E11000E6B51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF92F7F325222E11000E6B51 /* LaunchScreen.storyboard */; };
 		FF92F80025222E12000E6B51 /* lab_product2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F7FF25222E12000E6B51 /* lab_product2Tests.swift */; };
 		FF92F80B25222E12000E6B51 /* lab_product2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F80A25222E12000E6B51 /* lab_product2UITests.swift */; };
+		FF92F81C25223AB5000E6B51 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF92F81B25223AB5000E6B51 /* sample.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FF92F80625222E12000E6B51 /* lab_product2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab_product2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF92F80A25222E12000E6B51 /* lab_product2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab_product2UITests.swift; sourceTree = "<group>"; };
 		FF92F80C25222E12000E6B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF92F81B25223AB5000E6B51 /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sample.mp3; path = "../../../Documents/研究/動画/sample.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FF92F7F125222E11000E6B51 /* Assets.xcassets */,
 				FF92F7F325222E11000E6B51 /* LaunchScreen.storyboard */,
 				FF92F7F625222E11000E6B51 /* Info.plist */,
+				FF92F81B25223AB5000E6B51 /* sample.mp3 */,
 			);
 			path = lab_product2;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				FF92F7F525222E11000E6B51 /* LaunchScreen.storyboard in Resources */,
 				FF92F7F225222E11000E6B51 /* Assets.xcassets in Resources */,
+				FF92F81C25223AB5000E6B51 /* sample.mp3 in Resources */,
 				FF92F7F025222E0D000E6B51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
