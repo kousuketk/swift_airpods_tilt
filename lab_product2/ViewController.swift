@@ -1,23 +1,27 @@
-//
-//  ViewController.swift
-//  lab_product2
-//
-//  Created by Takahashi on 2020/09/28.
-//
-
 import UIKit
 import AVFoundation
 import CoreMotion
 
 class ViewController: UIViewController {
     
+    //
+    // ------------------------ upper -------------------------------
+    //
+    // setting sound
     let musicPath_sound_quiet = Bundle.main.bundleURL.appendingPathComponent("backgroud_quiet.mp3")
     let musicPath_alert = Bundle.main.bundleURL.appendingPathComponent("alert.mp3")
     var musicPlayer_sound_quiet = AVAudioPlayer()
     var musicPlayer_alert_quiet = AVAudioPlayer()
+
+    // setting flag
     var flag_sound_quiet = false
     var flag_alert_quiet = false
-
+    
+    // setting label
+    @IBOutlet weak var upper_sound_label: UILabel!
+    @IBOutlet weak var upper_alert_label: UILabel!
+    
+    // sound func
     @IBAction func sound_quiet(_ sender: Any) {
         do {
             musicPlayer_sound_quiet = try AVAudioPlayer(contentsOf: musicPath_sound_quiet)
@@ -29,11 +33,13 @@ class ViewController: UIViewController {
                 musicPlayer_sound_quiet.stop()
                 flag_sound_quiet = false
             }
+            upper_sound_label.text = String(flag_sound_quiet)
         } catch {
             print("エラー")
         }
     }
     
+    // alert func
     @IBAction func alert_quiet(_ sender: Any) {
         do {
             musicPlayer_alert_quiet = try AVAudioPlayer(contentsOf: musicPath_alert)
@@ -45,10 +51,19 @@ class ViewController: UIViewController {
                 musicPlayer_alert_quiet.stop()
                 flag_alert_quiet = false
             }
+            upper_alert_label.text = String(flag_alert_quiet)
         } catch {
             print("エラー")
         }
     }
+    
+    //
+    // --------------------- under ------------------------------
+    //
+    
+    //
+    //---------------------- time -------------------------------
+    //
     // labelの定義
     @IBOutlet weak var time_data: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -60,10 +75,14 @@ class ViewController: UIViewController {
     // AirPods Pro => APP :)
 //    let APP = CMHeadphoneMotionManager()
     
+    //
+    // --------------------- 初期化 ------------------------------
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
+        // upper
+        upper_sound_label.text = String(flag_sound_quiet)
+        upper_alert_label.text = String(flag_alert_quiet)
         // AirPods
 //        guard APP.isDeviceMotionAvailable else { return }
         //3秒ごとに繰り返す、repeat every 3 seconds
