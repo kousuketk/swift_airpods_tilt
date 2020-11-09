@@ -90,8 +90,15 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         do {
             let csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/" + "0_pre_trial" + ".csv"
             try FileManager.default.removeItem(atPath: csvPath)
-            let fileStrData = "file str data"
-            try fileStrData.write(toFile: csvPath, atomically: true, encoding: String.Encoding.utf8)
+            let time = String(12312)
+            let til = String(3234)
+            let flag = true
+            let flagStr = String(flag)
+            let header =  "time" + "," + "head pitch" + "," + "alert status" + "\n"
+            let data = time + "," + til + "," + flagStr + "\n"
+            let dataplus = header + data
+            try dataplus.write(toFile: csvPath, atomically: true, encoding: String.Encoding.utf8)
+            print(dataplus)
             
 //            let csvData = try String(contentsOfFile:fileUrl!, encoding:String.Encoding.utf8)
 //            let dataList = csvData.components(separatedBy: "\n")
