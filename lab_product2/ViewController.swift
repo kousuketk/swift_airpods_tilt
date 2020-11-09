@@ -115,14 +115,10 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     // label func
     func printData(_ data: CMDeviceMotion) {
         pitch_label.text = String(data.attitude.pitch)
-        roll_label.text = String(data.attitude.roll)
-        yaw_label.text = String(data.attitude.yaw)
         
-        format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
-        let nowOnTime = format.string(from: Date())
-        time_data.text = nowOnTime
+        let time = String(Date().timeIntervalSince1970)
         if flag_output == true {
-            dataList = dataList + String(nowOnTime) + "," + String(data.attitude.pitch) + "," + String(flag_alert_quiet) + "\n"
+            dataList = dataList + time + "," + String(data.attitude.pitch) + "," + String(flag_alert_quiet) + "\n"
         }
     }
     
@@ -141,9 +137,6 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         APP.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error in guard let motion = motion, error == nil else { return }
             self?.printData(motion)
         })
-        
-        // csvファイル関連
-//        print(csvPath)
     }
 }
 
