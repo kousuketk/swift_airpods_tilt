@@ -16,7 +16,6 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     // setting flag
     var flag_sound_quiet = false
     var flag_alert_quiet = false
-    // setting label
     @IBOutlet weak var upper_sound_label: UILabel!
     @IBOutlet weak var upper_alert_label: UILabel!
     // sound func
@@ -62,11 +61,9 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     //
     // --------------------- csv ---------------------------------
     //
-    // setting
     var flag_output = false
     let header =  "time" + "," + "head pitch" + "," + "alert status" + "\n"
     var dataList = String()
-    // flag操作だけ
     var num: Int = 0
     @IBOutlet weak var csv_status: UILabel!
     let csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/" + "0_pre_trial" + ".csv"
@@ -80,9 +77,11 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
             csv_status.text = "失敗" + String(num)
         }
     }
+    // dataListをcsvに出力する
     @IBAction func output_end(_ sender: Any) {
         flag_output = false
         do {
+            dataList = header + dataList
             try dataList.write(toFile: csvPath, atomically: true, encoding: String.Encoding.utf8)
             print(dataList)
             dataList = String()
@@ -94,15 +93,12 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     //
     //---------------------- timer -------------------------------
     //
-    // setting time
     var timer: Timer!
     let format = DateFormatter()
     var timeList = String()
-    // setting label
+    let time = String()
     @IBOutlet weak var time_data: UILabel!
     @objc func update(tm: Timer) {
-        //この関数を繰り返す、repeat this function
-        time_data.text = String(Date().timeIntervalSince1970)
         // AirPods
         APP.delegate = self
         guard APP.isDeviceMotionAvailable else { return }
@@ -118,8 +114,9 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     @IBOutlet weak var pitch_label: UILabel!
     func printData(_ data: CMDeviceMotion) {
         pitch_label.text = String(data.attitude.pitch)
-        
-        let time = String(Date().timeIntervalSince1970)
+        format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
+        let time = format.string(from: Date())
+        time_data.text = time
         if flag_output == true {
             dataList = dataList + time + "," + String(data.attitude.pitch) + "," + String(flag_alert_quiet) + "\n"
         }
