@@ -68,12 +68,6 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     // setting label
     @IBOutlet weak var time_data: UILabel!
     @IBOutlet weak var textView: UITextView!
-    // timeInterval func
-    @objc func update(tm: Timer) {
-        //この関数を繰り返す、repeat this function
-        format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
-        time_data.text = format.string(from: Date())
-    }
     
     //
     // --------------------- csv ---------------------------------
@@ -127,8 +121,12 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         pitch_label.text = String(data.attitude.pitch)
         roll_label.text = String(data.attitude.roll)
         yaw_label.text = String(data.attitude.yaw)
+        
+        format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
+        time_data.text = format.string(from: Date())
         if flag_output == true {
             //csvに出力する
+
         }
     }
     
@@ -141,9 +139,6 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         upper_sound_label.text = String(flag_sound_quiet)
         upper_alert_label.text = String(flag_alert_quiet)
         // under
-        // timer
-        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-        timer.fire()
         // AirPods
         APP.delegate = self
         guard APP.isDeviceMotionAvailable else { return }
