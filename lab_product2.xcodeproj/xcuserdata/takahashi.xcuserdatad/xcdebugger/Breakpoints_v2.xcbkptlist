@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E2A9411B-5680-4E2F-9AFA-E4457BA6A8CF"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lab_product2/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 52b9c82959431acf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lab_product2.ViewController.time_data.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "lab_product2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 13ad2effdbb946d3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lab_product2.ViewController.time_data.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "lab_product2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 853b84b6f620aa8c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lab_product2.ViewController.time_data.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "lab_product2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - b9c7d52ebf678ce0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lab_product2.ViewController.time_data.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "lab_product2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 978f7a2631c58f94"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lab_product2.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; lab_product2.ViewController"
+                  moduleName = "lab_product2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1616">
+               </Location>
+               <Location
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 95badcb5050ec5fa"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "lab_product2.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;lab_product2.ViewController&gt;"
+                  moduleName = "lab_product2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1584">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

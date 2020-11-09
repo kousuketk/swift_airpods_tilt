@@ -156,11 +156,19 @@
                                     <action selector="output_end:" destination="BYZ-38-t0r" eventType="touchDown" id="HLr-ZN-K3v"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcX-8H-nB6">
+                                <rect key="frame" x="168" y="410" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="csv_status" destination="zcX-8H-nB6" id="qOz-Sm-8Uo"/>
                         <outlet property="pitch_label" destination="lsj-CZ-Hvt" id="W6W-Cg-yil"/>
                         <outlet property="roll_label" destination="nFm-tD-4hw" id="RIs-GG-MGv"/>
                         <outlet property="time_data" destination="Yie-8m-ATd" id="Im5-qA-3ey"/>

@@ -1,6 +1,7 @@
 import UIKit
 import AVFoundation
 import CoreMotion
+import Foundation
 
 class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     
@@ -79,21 +80,25 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     //
     // setting
     var flag_output = false
-//    let documentPath = NSHomeDirectory() + "/Documents"
-    let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    lazy var path_file_name = documentPath.appendingPathComponent( "hoge.txt" )
     // flag操作だけ
+    var num: Int = 0
+    @IBOutlet weak var csv_status: UILabel!
+//    var csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/サンプル/" + "事前試行" + ".csv"
     @IBAction func output_start(_ sender: Any) {
         flag_output = true
+        num += 1
         do {
-            let data = "Hello, world!".data(using: .utf8)
-            FileManager.default.createFile(atPath: documentPath.path,
-                                       contents: data, attributes: nil)
-//            let data:[UInt8] = [0x01, 0x02, 0x03]
-//            try Data(bytes: data, count: data.count).write(to: path_file_name)
-            print("成功")
+            let csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/" + "0_pre_trial" + ".csv"
+            try FileManager.default.removeItem(atPath: csvPath)
+            let fileStrData = "file str data"
+            try fileStrData.write(toFile: csvPath, atomically: true, encoding: String.Encoding.utf8)
+            
+//            let csvData = try String(contentsOfFile:fileUrl!, encoding:String.Encoding.utf8)
+//            let dataList = csvData.components(separatedBy: "\n")
+//            print(datalist)
+            csv_status.text = "成功" + String(num)
         } catch {
-            print("失敗")
+            csv_status.text = "失敗" + String(num)
         }
     }
     @IBAction func output_end(_ sender: Any) {
@@ -138,6 +143,9 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         APP.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error in guard let motion = motion, error == nil else { return }
             self?.printData(motion)
         })
+        
+        // csvファイル関連
+//        print(csvPath)
     }
 }
 

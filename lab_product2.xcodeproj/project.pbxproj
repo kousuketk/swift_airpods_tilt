@@ -10,6 +10,7 @@
 		FF4872E12523AC0500D8A7B2 /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4872E02523AC0500D8A7B2 /* alert.mp3 */; };
 		FF4872EB2523AC3100D8A7B2 /* backgroud_quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4872EA2523AC3100D8A7B2 /* backgroud_quiet.mp3 */; };
 		FF4872F02523AC4600D8A7B2 /* backgroud_normal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4872EF2523AC4600D8A7B2 /* backgroud_normal.mp3 */; };
+		FF6308FA25541BBA00698357 /* dataList.csv in Resources */ = {isa = PBXBuildFile; fileRef = FF6308F925541BBA00698357 /* dataList.csv */; };
 		FF92F7E925222E0D000E6B51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F7E825222E0D000E6B51 /* AppDelegate.swift */; };
 		FF92F7EB25222E0D000E6B51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F7EA25222E0D000E6B51 /* SceneDelegate.swift */; };
 		FF92F7ED25222E0D000E6B51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F7EC25222E0D000E6B51 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		FF4872E02523AC0500D8A7B2 /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alert.mp3; path = "../../../Documents/研究/音声/alert.mp3"; sourceTree = "<group>"; };
 		FF4872EA2523AC3100D8A7B2 /* backgroud_quiet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroud_quiet.mp3; path = "../../../Documents/研究/音声/backgroud_quiet.mp3"; sourceTree = "<group>"; };
 		FF4872EF2523AC4600D8A7B2 /* backgroud_normal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroud_normal.mp3; path = "../../../Documents/研究/音声/backgroud_normal.mp3"; sourceTree = "<group>"; };
+		FF6308F925541BBA00698357 /* dataList.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataList.csv; sourceTree = "<group>"; };
 		FF92F7E525222E0D000E6B51 /* lab_product2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab_product2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF92F7E825222E0D000E6B51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF92F7EA25222E0D000E6B51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				FF92F7E825222E0D000E6B51 /* AppDelegate.swift */,
+				FF6308F925541BBA00698357 /* dataList.csv */,
 				FF92F7EA25222E0D000E6B51 /* SceneDelegate.swift */,
 				FF92F7EC25222E0D000E6B51 /* ViewController.swift */,
 				FF92F7EE25222E0D000E6B51 /* Main.storyboard */,
@@ -244,6 +247,7 @@
 				FF4872E12523AC0500D8A7B2 /* alert.mp3 in Resources */,
 				FF92F7F525222E11000E6B51 /* LaunchScreen.storyboard in Resources */,
 				FF4872EB2523AC3100D8A7B2 /* backgroud_quiet.mp3 in Resources */,
+				FF6308FA25541BBA00698357 /* dataList.csv in Resources */,
 				FF92F7F225222E11000E6B51 /* Assets.xcassets in Resources */,
 				FF92F7F025222E0D000E6B51 /* Main.storyboard in Resources */,
 			);
