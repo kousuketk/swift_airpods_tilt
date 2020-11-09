@@ -60,16 +60,6 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     //
     
     //
-    //---------------------- timer -------------------------------
-    //
-    // setting time
-    var timer: Timer!
-    let format = DateFormatter()
-    // setting label
-    @IBOutlet weak var time_data: UILabel!
-    @IBOutlet weak var textView: UITextView!
-    
-    //
     // --------------------- csv ---------------------------------
     //
     // setting
@@ -80,7 +70,6 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     var num: Int = 0
     @IBOutlet weak var csv_status: UILabel!
     let csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/" + "0_pre_trial" + ".csv"
-//    var csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/サンプル/" + "事前試行" + ".csv"
     @IBAction func output_start(_ sender: Any) {
         flag_output = true
         num += 1
@@ -102,17 +91,31 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         }
     }
     
-    
+    //
+    //---------------------- timer -------------------------------
+    //
+    // setting time
+    var timer: Timer!
+    let format = DateFormatter()
+    var timeList = String()
+    // setting label
+    @IBOutlet weak var time_data: UILabel!
+    @objc func update(tm: Timer) {
+        //この関数を繰り返す、repeat this function
+        time_data.text = String(Date().timeIntervalSince1970)
+        // AirPods
+        APP.delegate = self
+        guard APP.isDeviceMotionAvailable else { return }
+        APP.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error in guard let motion = motion, error == nil else { return }
+            self?.printData(motion)
+        })
+    }
+
     //
     // --------------------- AirPods ----------------------------
     //
-    // setting
     let APP = CMHeadphoneMotionManager()
-    // setting label
     @IBOutlet weak var pitch_label: UILabel!
-    @IBOutlet weak var roll_label: UILabel!
-    @IBOutlet weak var yaw_label: UILabel!
-    // label func
     func printData(_ data: CMDeviceMotion) {
         pitch_label.text = String(data.attitude.pitch)
         
@@ -123,7 +126,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     }
     
     //
-    // --------------------- 初期化 ------------------------------
+    // --------------------- viewLoad ------------------------------
     //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,12 +134,9 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         upper_sound_label.text = String(flag_sound_quiet)
         upper_alert_label.text = String(flag_alert_quiet)
         // under
-        // AirPods
-        APP.delegate = self
-        guard APP.isDeviceMotionAvailable else { return }
-        APP.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error in guard let motion = motion, error == nil else { return }
-            self?.printData(motion)
-        })
+        // timer
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        timer.fire()
     }
 }
 
