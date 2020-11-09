@@ -74,29 +74,18 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     //
     // setting
     var flag_output = false
+    let header =  "time" + "," + "head pitch" + "," + "alert status" + "\n"
+    var dataList = String()
     // flag操作だけ
     var num: Int = 0
     @IBOutlet weak var csv_status: UILabel!
+    let csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/" + "0_pre_trial" + ".csv"
 //    var csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/サンプル/" + "事前試行" + ".csv"
     @IBAction func output_start(_ sender: Any) {
         flag_output = true
         num += 1
         do {
-            let csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/" + "0_pre_trial" + ".csv"
             try FileManager.default.removeItem(atPath: csvPath)
-            let time = String(12312)
-            let til = String(3234)
-            let flag = true
-            let flagStr = String(flag)
-            let header =  "time" + "," + "head pitch" + "," + "alert status" + "\n"
-            let data = time + "," + til + "," + flagStr + "\n"
-            let dataplus = header + data
-            try dataplus.write(toFile: csvPath, atomically: true, encoding: String.Encoding.utf8)
-            print(dataplus)
-            
-//            let csvData = try String(contentsOfFile:fileUrl!, encoding:String.Encoding.utf8)
-//            let dataList = csvData.components(separatedBy: "\n")
-//            print(datalist)
             csv_status.text = "成功" + String(num)
         } catch {
             csv_status.text = "失敗" + String(num)
@@ -104,6 +93,13 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     }
     @IBAction func output_end(_ sender: Any) {
         flag_output = false
+        do {
+            try dataList.write(toFile: csvPath, atomically: true, encoding: String.Encoding.utf8)
+            print(dataList)
+            dataList = String()
+        } catch {
+            print("dataList.write error")
+        }
     }
     
     
@@ -123,10 +119,10 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         yaw_label.text = String(data.attitude.yaw)
         
         format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
-        time_data.text = format.string(from: Date())
+        let nowOnTime = format.string(from: Date())
+        time_data.text = nowOnTime
         if flag_output == true {
-            //csvに出力する
-
+            dataList = dataList + String(nowOnTime) + "," + String(data.attitude.pitch) + "," + String(flag_alert_quiet) + "\n"
         }
     }
     
