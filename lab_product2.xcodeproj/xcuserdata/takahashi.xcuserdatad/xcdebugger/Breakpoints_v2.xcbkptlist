@@ -20,8 +20,8 @@
             landmarkType = "0">
             <Locations>
                <Location
-                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 52b9c82959431acf"
-                  shouldBeEnabled = "No"
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 52b9c82959431aa8"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "lab_product2.ViewController.time_data.getter : Swift.Optional&lt;__C.UILabel&gt;"
@@ -30,13 +30,13 @@
                   urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
                   offsetFromSymbolStart = "104">
                </Location>
                <Location
-                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 13ad2effdbb946d3"
-                  shouldBeEnabled = "No"
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 13ad2effdbb946b4"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "lab_product2.ViewController.time_data.setter : Swift.Optional&lt;__C.UILabel&gt;"
@@ -45,8 +45,8 @@
                   urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
                   offsetFromSymbolStart = "148">
                </Location>
                <Location
@@ -65,8 +65,8 @@
                   offsetFromSymbolStart = "60">
                </Location>
                <Location
-                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - b9c7d52ebf678ce0"
-                  shouldBeEnabled = "No"
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - b9c7d52ebf678c87"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "lab_product2.ViewController.time_data.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
@@ -75,13 +75,13 @@
                   urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
                   offsetFromSymbolStart = "72">
                </Location>
                <Location
-                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 978f7a2631c58f94"
-                  shouldBeEnabled = "No"
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 978f7a2631c58ff3"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "lab_product2.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; lab_product2.ViewController"
@@ -90,13 +90,13 @@
                   urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "1616">
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1716">
                </Location>
                <Location
-                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 95badcb5050ec5fa"
-                  shouldBeEnabled = "No"
+                  uuid = "DE37F17A-119E-4832-982F-77EB4955C7A1 - 95badcb5050ec59d"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "lab_product2.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;lab_product2.ViewController&gt;"
@@ -105,9 +105,9 @@
                   urlString = "file:///Users/takahashi/swift/lab_product2/lab_product2/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "1584">
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1684">
                </Location>
             </Locations>
          </BreakpointContent>
