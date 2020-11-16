@@ -34,7 +34,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
             }
             upper_sound_label.text = String(flag_sound40)
         } catch {
-            print("flag_sound40 エラー")
+            print("sound40 エラー")
         }
     }
     // alert func
@@ -51,18 +51,94 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
             }
             upper_alert_label.text = String(flag_alert40)
         } catch {
-            print("flag_alert40 エラー")
+            print("alert40 エラー")
         }
     }
-    
-    
+
     //
     // --------------------- 50dB ------------------------------
     //
-    
+    var musicPlayer_sound50 = AVAudioPlayer()
+    var musicPlayer_alert50 = AVAudioPlayer()
+    var flag_sound50 = false
+    var flag_alert50 = false
+    @IBOutlet weak var sound50_label: UILabel!
+    @IBOutlet weak var alert50_label: UILabel!
+    @IBAction func sound50_click(_ sender: Any) {
+        do {
+            musicPlayer_sound50 = try AVAudioPlayer(contentsOf: musicPath_sound_quiet)
+            musicPlayer_sound50.numberOfLoops = -1
+            if flag_sound50 == false {
+                musicPlayer_sound50.play()
+                flag_sound50 = true
+            } else {
+                musicPlayer_sound50.stop()
+                flag_sound50 = false
+            }
+            sound50_label.text = String(flag_sound50)
+        } catch {
+            print("sound50 エラー")
+        }
+    }
+    @IBAction func alert50_click(_ sender: Any) {
+        do {
+            musicPlayer_alert50 = try AVAudioPlayer(contentsOf: musicPath_alert)
+            musicPlayer_alert50.numberOfLoops = -1
+            if flag_alert50 == false {
+                musicPlayer_alert50.play()
+                flag_alert50 = true
+            } else {
+                musicPlayer_alert50.stop()
+                flag_alert50 = false
+            }
+            alert50_label.text = String(flag_alert50)
+        } catch {
+            print("alert50 エラー")
+        }
+    }
+
     //
     // --------------------- 60dB ------------------------------
     //
+    var musicPlayer_sound60 = AVAudioPlayer()
+    var musicPlayer_alert60 = AVAudioPlayer()
+    var flag_sound60 = false
+    var flag_alert60 = false
+    @IBOutlet weak var sound60_label: UILabel!
+    @IBOutlet weak var alert60_label: UILabel!
+    @IBAction func sound60_click(_ sender: Any) {
+        do {
+            musicPlayer_sound60 = try AVAudioPlayer(contentsOf: musicPath_sound_noisy)
+            musicPlayer_sound60.numberOfLoops = -1
+            if flag_sound60 == false {
+                musicPlayer_sound60.play()
+                flag_sound60 = true
+            } else {
+                musicPlayer_sound60.stop()
+                flag_sound60 = false
+            }
+            sound60_label.text = String(flag_sound60)
+        } catch {
+            print("sound60 エラー")
+        }
+    }
+    @IBAction func alert60_click(_ sender: Any) {
+        do {
+            musicPlayer_alert60 = try AVAudioPlayer(contentsOf: musicPath_alert)
+            musicPlayer_alert60.numberOfLoops = -1
+            if flag_alert60 == false {
+                musicPlayer_alert60.play()
+                flag_alert60 = true
+            } else {
+                musicPlayer_alert60.stop()
+                flag_alert60 = false
+            }
+            alert60_label.text = String(flag_alert60)
+        } catch {
+            print("alert60 エラー")
+        }
+    }
+    
     
     //
     // --------------------- csv ---------------------------------
