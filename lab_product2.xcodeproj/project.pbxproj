@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FF4872E12523AC0500D8A7B2 /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4872E02523AC0500D8A7B2 /* alert.mp3 */; };
-		FF4872EB2523AC3100D8A7B2 /* backgroud_quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4872EA2523AC3100D8A7B2 /* backgroud_quiet.mp3 */; };
-		FF4872F02523AC4600D8A7B2 /* backgroud_normal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4872EF2523AC4600D8A7B2 /* backgroud_normal.mp3 */; };
 		FF6308FA25541BBA00698357 /* dataList.csv in Resources */ = {isa = PBXBuildFile; fileRef = FF6308F925541BBA00698357 /* dataList.csv */; };
 		FF92F7E925222E0D000E6B51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F7E825222E0D000E6B51 /* AppDelegate.swift */; };
 		FF92F7EB25222E0D000E6B51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F7EA25222E0D000E6B51 /* SceneDelegate.swift */; };
@@ -19,6 +17,8 @@
 		FF92F7F525222E11000E6B51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF92F7F325222E11000E6B51 /* LaunchScreen.storyboard */; };
 		FF92F80025222E12000E6B51 /* lab_product2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F7FF25222E12000E6B51 /* lab_product2Tests.swift */; };
 		FF92F80B25222E12000E6B51 /* lab_product2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92F80A25222E12000E6B51 /* lab_product2UITests.swift */; };
+		FFE04515256237AD003E692F /* sound_noisy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFE04514256237AD003E692F /* sound_noisy.mp3 */; };
+		FFE04520256239B8003E692F /* sound_quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFE0451F256239B8003E692F /* sound_quiet.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 
 /* Begin PBXFileReference section */
 		FF4872E02523AC0500D8A7B2 /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alert.mp3; path = "../../../Documents/研究/音声/alert.mp3"; sourceTree = "<group>"; };
-		FF4872EA2523AC3100D8A7B2 /* backgroud_quiet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroud_quiet.mp3; path = "../../../Documents/研究/音声/backgroud_quiet.mp3"; sourceTree = "<group>"; };
-		FF4872EF2523AC4600D8A7B2 /* backgroud_normal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroud_normal.mp3; path = "../../../Documents/研究/音声/backgroud_normal.mp3"; sourceTree = "<group>"; };
 		FF6308F925541BBA00698357 /* dataList.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataList.csv; sourceTree = "<group>"; };
 		FF92F7E525222E0D000E6B51 /* lab_product2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab_product2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF92F7E825222E0D000E6B51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +55,8 @@
 		FF92F80625222E12000E6B51 /* lab_product2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab_product2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF92F80A25222E12000E6B51 /* lab_product2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab_product2UITests.swift; sourceTree = "<group>"; };
 		FF92F80C25222E12000E6B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFE04514256237AD003E692F /* sound_noisy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound_noisy.mp3; path = ../../../Downloads/sound_noisy.mp3; sourceTree = "<group>"; };
+		FFE0451F256239B8003E692F /* sound_quiet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound_quiet.mp3; path = ../../../Downloads/sound_quiet.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +115,9 @@
 				FF92F7F125222E11000E6B51 /* Assets.xcassets */,
 				FF92F7F325222E11000E6B51 /* LaunchScreen.storyboard */,
 				FF92F7F625222E11000E6B51 /* Info.plist */,
+				FFE04514256237AD003E692F /* sound_noisy.mp3 */,
+				FFE0451F256239B8003E692F /* sound_quiet.mp3 */,
 				FF4872E02523AC0500D8A7B2 /* alert.mp3 */,
-				FF4872EA2523AC3100D8A7B2 /* backgroud_quiet.mp3 */,
-				FF4872EF2523AC4600D8A7B2 /* backgroud_normal.mp3 */,
 			);
 			path = lab_product2;
 			sourceTree = "<group>";
@@ -243,12 +243,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF4872F02523AC4600D8A7B2 /* backgroud_normal.mp3 in Resources */,
 				FF4872E12523AC0500D8A7B2 /* alert.mp3 in Resources */,
 				FF92F7F525222E11000E6B51 /* LaunchScreen.storyboard in Resources */,
-				FF4872EB2523AC3100D8A7B2 /* backgroud_quiet.mp3 in Resources */,
 				FF6308FA25541BBA00698357 /* dataList.csv in Resources */,
 				FF92F7F225222E11000E6B51 /* Assets.xcassets in Resources */,
+				FFE04520256239B8003E692F /* sound_quiet.mp3 in Resources */,
+				FFE04515256237AD003E692F /* sound_noisy.mp3 in Resources */,
 				FF92F7F025222E0D000E6B51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
