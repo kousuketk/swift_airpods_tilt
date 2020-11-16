@@ -5,17 +5,18 @@ import Foundation
 
 class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     
-    //
-    // ------------------------ upper -------------------------------
-    //
     // setting sound
     let musicPath_sound_quiet = Bundle.main.bundleURL.appendingPathComponent("backgroud_quiet.mp3")
     let musicPath_alert = Bundle.main.bundleURL.appendingPathComponent("alert.mp3")
+    
+    //
+    // ------------------------ 40dB -------------------------------
+    //
     var musicPlayer_sound_quiet = AVAudioPlayer()
     var musicPlayer_alert_quiet = AVAudioPlayer()
     // setting flag
-    var flag_sound_quiet = false
-    var flag_alert_quiet = false
+    var flag_sound40 = false
+    var flag_alert40 = false
     @IBOutlet weak var upper_sound_label: UILabel!
     @IBOutlet weak var upper_alert_label: UILabel!
     // sound func
@@ -23,16 +24,16 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         do {
             musicPlayer_sound_quiet = try AVAudioPlayer(contentsOf: musicPath_sound_quiet)
             musicPlayer_sound_quiet.numberOfLoops = -1
-            if flag_sound_quiet == false {
+            if flag_sound40 == false {
                 musicPlayer_sound_quiet.play()
-                flag_sound_quiet = true
+                flag_sound40 = true
             } else {
                 musicPlayer_sound_quiet.stop()
-                flag_sound_quiet = false
+                flag_sound40 = false
             }
-            upper_sound_label.text = String(flag_sound_quiet)
+            upper_sound_label.text = String(flag_sound40)
         } catch {
-            print("エラー")
+            print("flag_sound40 エラー")
         }
     }
     // alert func
@@ -40,22 +41,26 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         do {
             musicPlayer_alert_quiet = try AVAudioPlayer(contentsOf: musicPath_alert)
             musicPlayer_alert_quiet.numberOfLoops = -1
-            if flag_alert_quiet == false {
+            if flag_alert40 == false {
                 musicPlayer_alert_quiet.play()
-                flag_alert_quiet = true
+                flag_alert40 = true
             } else {
                 musicPlayer_alert_quiet.stop()
-                flag_alert_quiet = false
+                flag_alert40 = false
             }
-            upper_alert_label.text = String(flag_alert_quiet)
+            upper_alert_label.text = String(flag_alert40)
         } catch {
-            print("エラー")
+            print("flag_alert40 エラー")
         }
     }
     
     
     //
-    // --------------------- under ------------------------------
+    // --------------------- 50dB ------------------------------
+    //
+    
+    //
+    // --------------------- 60dB ------------------------------
     //
     
     //
@@ -118,7 +123,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         let time = format.string(from: Date())
         time_data.text = time
         if flag_output == true {
-            dataList = dataList + time + "," + String(data.attitude.pitch) + "," + String(flag_alert_quiet) + "\n"
+            dataList = dataList + time + "," + String(data.attitude.pitch) + "," + String(flag_alert40) + "\n"
         }
     }
     
@@ -127,9 +132,9 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        // upper
-        upper_sound_label.text = String(flag_sound_quiet)
-        upper_alert_label.text = String(flag_alert_quiet)
+        // 40dB
+        upper_sound_label.text = String(flag_sound40)
+        upper_alert_label.text = String(flag_alert40)
         // under
         // timer
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
