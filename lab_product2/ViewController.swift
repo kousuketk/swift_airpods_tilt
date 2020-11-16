@@ -183,6 +183,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     @objc func update(tm: Timer) {
         // AirPods
         APP.delegate = self
+        time_data.text = format.string(from: Date())
         guard APP.isDeviceMotionAvailable else { return }
         APP.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error in guard let motion = motion, error == nil else { return }
             self?.printData(motion)
@@ -196,11 +197,8 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     @IBOutlet weak var pitch_label: UILabel!
     func printData(_ data: CMDeviceMotion) {
         pitch_label.text = String(data.attitude.pitch)
-        format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
-        let time = format.string(from: Date())
-        time_data.text = time
         if flag_output == true {
-            dataList = dataList + time + "," + String(data.attitude.pitch) + "," + String(flag_alert40) + "\n"
+            dataList = dataList + format.string(from: Date()) + "," + String(data.attitude.pitch) + "," + String(flag_alert40) + "\n"
         }
     }
     
@@ -212,8 +210,14 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         // 40dB
         upper_sound_label.text = String(flag_sound40)
         upper_alert_label.text = String(flag_alert40)
-        // under
-        // timer
+        // 50dB
+        sound50_label.text = String(flag_sound50)
+        alert50_label.text = String(flag_alert50)
+        // 60dB
+        sound60_label.text = String(flag_sound60)
+        alert60_label.text = String(flag_alert60)
+        
+        format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         timer.fire()
     }
