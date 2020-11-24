@@ -85,7 +85,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         do {
             musicPlayer_alert50 = try AVAudioPlayer(contentsOf: musicPath_alert)
             musicPlayer_alert50.numberOfLoops = -1
-            musicPlayer_alert50.volume = 1
+            musicPlayer_alert50.volume = 0.5
             if flag_alert50 == false {
                 musicPlayer_alert50.play()
                 flag_alert50 = true
