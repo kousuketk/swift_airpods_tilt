@@ -42,6 +42,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         do {
             musicPlayer_alert40 = try AVAudioPlayer(contentsOf: musicPath_alert)
             musicPlayer_alert40.numberOfLoops = -1
+            musicPlayer_alert40.volume = 0.5
             if flag_alert40 == false {
                 musicPlayer_alert40.play()
                 flag_alert40 = true
@@ -84,6 +85,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         do {
             musicPlayer_alert50 = try AVAudioPlayer(contentsOf: musicPath_alert)
             musicPlayer_alert50.numberOfLoops = -1
+            musicPlayer_alert50.volume = 1
             if flag_alert50 == false {
                 musicPlayer_alert50.play()
                 flag_alert50 = true
@@ -126,6 +128,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         do {
             musicPlayer_alert60 = try AVAudioPlayer(contentsOf: musicPath_alert)
             musicPlayer_alert60.numberOfLoops = -1
+            musicPlayer_alert60.volume = 1.5
             if flag_alert60 == false {
                 musicPlayer_alert60.play()
                 flag_alert60 = true
@@ -154,21 +157,24 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         num += 1
         do {
             try FileManager.default.removeItem(atPath: csvPath)
-            csv_status.text = "成功" + String(num)
+            csv_status.text = "start" + String(num)
         } catch {
             csv_status.text = "失敗" + String(num)
         }
     }
     // dataListをcsvに出力する
     @IBAction func output_end(_ sender: Any) {
-        flag_output = false
-        do {
-            dataList = header + dataList
-            try dataList.write(toFile: csvPath, atomically: true, encoding: String.Encoding.utf8)
-            print(dataList)
-            dataList = String()
-        } catch {
-            print("dataList.write error")
+        if flag_output == true {
+            flag_output = false
+            do {
+                dataList = header + dataList
+                try dataList.write(toFile: csvPath, atomically: true, encoding: String.Encoding.utf8)
+                print(dataList)
+                dataList = String()
+                csv_status.text = "end" + String(num)
+            } catch {
+                print("dataList.write error")
+            }
         }
     }
     
@@ -198,7 +204,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     func printData(_ data: CMDeviceMotion) {
         pitch_label.text = String(data.attitude.pitch)
         if flag_output == true {
-            dataList = dataList + format.string(from: Date()) + "," + String(data.attitude.pitch) + "," + String(flag_alert40) + "\n"
+            dataList = dataList + format.string(from: Date()) + "," + String(data.attitude.pitch) + "," + String(flag_alert40) + "," + String(flag_alert50) + "," + String(flag_alert60) + "\n"
         }
     }
     
