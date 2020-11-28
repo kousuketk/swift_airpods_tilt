@@ -3,7 +3,7 @@ import AVFoundation
 import CoreMotion
 import Foundation
 
-class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
+class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // setting sound
     let musicPath_sound_quiet = Bundle.main.bundleURL.appendingPathComponent("sound_quiet.mp3")
@@ -149,17 +149,20 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     var flag_output = false
     let header =  "time" + "," + "head pitch" + "," + "alert status" + "\n"
     var dataList = String()
+    var csvPath:String = ""
     var num: Int = 0
     @IBOutlet weak var csv_status: UILabel!
-    let csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/" + "0_pre_trial" + ".csv"
     @IBAction func output_start(_ sender: Any) {
-        flag_output = true
-        num += 1
-        do {
-            try FileManager.default.removeItem(atPath: csvPath)
-            csv_status.text = "start" + String(num)
-        } catch {
-            csv_status.text = "失敗" + String(num)
+        if flag_output == false {
+            csvPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + pickerSelected
+            flag_output = true
+            num += 1
+            do {
+                try FileManager.default.removeItem(atPath: csvPath)
+                csv_status.text = "start" + String(num)
+            } catch {
+                csv_status.text = "失敗" + String(num)
+            }
         }
     }
     // dataListをcsvに出力する
@@ -176,6 +179,50 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
                 print("dataList.write error")
             }
         }
+    }
+    
+    // pickerView
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var pickerLabel: UILabel!
+    var pickerSelected:String = ""
+    let pickerData = [
+        "/0_base.csv",
+        "--------------------",
+        "/1.0_reading_40.csv",
+        "/1.0_reading_50.csv",
+        "/1.0_reading_65.csv",
+        "/1.1_reading_40.csv",
+        "/1.1_reading_50.csv",
+        "/1.1_reading_65.csv",
+        "--------------------",
+        "/2.0_listening_40.csv",
+        "/2.0_listening_50.csv",
+        "/2.0_listening_65.csv",
+        "/2.1_listening_40.csv",
+        "/2.1_listening_50.csv",
+        "/2.1_listening_65.csv",
+    ]
+    // UIPickerViewの列の数
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    // UIPickerViewの行数、リストの数
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    // UIPickerViewの最初の表示
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    // UIPickerViewのRowが選択された時の挙動
+    func pickerView(_ pickerView: UIPickerView,
+                    didSelectRow row: Int,
+                    inComponent component: Int) {
+        pickerLabel.text = pickerData[row]
+        pickerSelected = pickerData[row]
     }
     
     //
@@ -226,6 +273,12 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
         format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         timer.fire()
+        
+        // csv
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerSelected = pickerData[0]
+        pickerLabel.text = pickerSelected
     }
 }
 
