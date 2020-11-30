@@ -38,14 +38,18 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
         }
     }
     // alert func
+    var alert40_count: Int = 0
+    @IBOutlet weak var alert40_count_label: UILabel!
     @IBAction func alert_quiet(_ sender: Any) {
         do {
             musicPlayer_alert40 = try AVAudioPlayer(contentsOf: musicPath_alert)
             musicPlayer_alert40.numberOfLoops = -1
-            musicPlayer_alert40.volume = 0.5
+            musicPlayer_alert40.volume = 0.2
             if flag_alert40 == false {
                 musicPlayer_alert40.play()
                 flag_alert40 = true
+                alert40_count += 1
+                alert40_count_label.text = String(alert40_count)
             } else {
                 musicPlayer_alert40.stop()
                 flag_alert40 = false
@@ -81,6 +85,8 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
             print("sound50 エラー")
         }
     }
+    var alert50_count: Int = 0
+    @IBOutlet weak var alert50_count_label: UILabel!
     @IBAction func alert50_click(_ sender: Any) {
         do {
             musicPlayer_alert50 = try AVAudioPlayer(contentsOf: musicPath_alert)
@@ -89,6 +95,8 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
             if flag_alert50 == false {
                 musicPlayer_alert50.play()
                 flag_alert50 = true
+                alert50_count += 1
+                alert50_count_label.text = String(alert50_count)
             } else {
                 musicPlayer_alert50.stop()
                 flag_alert50 = false
@@ -124,6 +132,8 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
             print("sound60 エラー")
         }
     }
+    var alert60_count: Int = 0
+    @IBOutlet weak var alert60_count_label: UILabel!
     @IBAction func alert60_click(_ sender: Any) {
         do {
             musicPlayer_alert60 = try AVAudioPlayer(contentsOf: musicPath_alert)
@@ -132,6 +142,8 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
             if flag_alert60 == false {
                 musicPlayer_alert60.play()
                 flag_alert60 = true
+                alert60_count += 1
+                alert60_count_label.text = String(alert60_count)
             } else {
                 musicPlayer_alert60.stop()
                 flag_alert60 = false
@@ -140,6 +152,15 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
         } catch {
             print("alert60 エラー")
         }
+    }
+    // alert_count reset
+    @IBAction func alert_count_reset(_ sender: Any) {
+        alert40_count = 0
+        alert50_count = 0
+        alert60_count = 0
+        alert40_count_label.text = String(alert40_count)
+        alert50_count_label.text = String(alert50_count)
+        alert60_count_label.text = String(alert60_count)
     }
     
     
