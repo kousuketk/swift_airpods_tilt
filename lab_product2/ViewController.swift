@@ -91,7 +91,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
         do {
             musicPlayer_alert50 = try AVAudioPlayer(contentsOf: musicPath_alert)
             musicPlayer_alert50.numberOfLoops = -1
-            musicPlayer_alert50.volume = 0.5
+            musicPlayer_alert50.volume = 0.2
             if flag_alert50 == false {
                 musicPlayer_alert50.play()
                 flag_alert50 = true
@@ -120,6 +120,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
         do {
             musicPlayer_sound60 = try AVAudioPlayer(contentsOf: musicPath_sound_noisy)
             musicPlayer_sound60.numberOfLoops = -1
+            musicPlayer_sound60.volume = 0.8
             if flag_sound60 == false {
                 musicPlayer_sound60.play()
                 flag_sound60 = true
@@ -138,7 +139,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
         do {
             musicPlayer_alert60 = try AVAudioPlayer(contentsOf: musicPath_alert)
             musicPlayer_alert60.numberOfLoops = -1
-            musicPlayer_alert60.volume = 1.5
+            musicPlayer_alert60.volume = 1.4
             if flag_alert60 == false {
                 musicPlayer_alert60.play()
                 flag_alert60 = true
@@ -168,7 +169,7 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate, UIPick
     // --------------------- csv ---------------------------------
     //
     var flag_output = false
-    let header =  "time" + "," + "head pitch" + "," + "alert status" + "\n"
+    let header =  "date time" + "," + "headPitch" + "," + "alertStatus" + "\n"
     var dataList = String()
     var csvPath:String = ""
     var num: Int = 0
